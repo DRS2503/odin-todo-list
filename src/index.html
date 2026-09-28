@@ -7,21 +7,68 @@
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="index.js" ></script>
 </head>
+
 <body>
-    <aside class="bg-grey tc-primary">
+
+    <aside class="bg-primary fc-white padding-normal">
         <h1 class="fs-h1 fw-large">Projects</h1>
-        <nav>
-            <ul>
-                <button>Project1</button>
-                <button>Project2</button>
-                <button>Project3</button>
-                <button>Project4</button>
-                <button>Project5</button>
+        <nav class="fc-white">
+            <ul class="flex-col gap-small block-padding-normal">
+                <button class='nav-button'>Project1</button>
+                <button class='nav-button'>Project2</button>
+                <button class='nav-button'>Project3</button>
+                <button class='nav-button'>Project4</button>
+                <button class='nav-button'>Project5</button>
             </ul>
         </nav>
+        <button class="inverted-button">New Project</button>
     </aside>
 
-    <main>
+
+
+    <main class="bg-grey fc-primary padding-large">
+        <header class="flex-row-spacebetween">
+            <h1 class="fw-large fs-h1">Project Placeholder</h1>
+            <button class="inverted-button">Remove</button>
+        </header>
+
+
+        <section>
+            <div id="card-container | bg-accent">
+                <div class="entire-card">
+                    <div class="card">
+                        <h2 class="fs-h2">Title</h2>
+    
+                        <div class="card-data-container">
+                            <p class="label-p">Target</p>
+                            <p class="data-p">Data</p>
+                        </div>
+    
+                        <div class="card-data-container">
+                            <p class="label-p">Priority</p>
+                            <p class="data-p">Data</p>
+                        </div>
+    
+                        <div class="card-data-container | ">
+                            <p class="dropdown">Dropdown</p>
+                        </div>
+    
+                    </div>
+                    <div class="collapsible">
+                        <div>
+                            <p class="description-label">Description</p>
+                            <p class="description-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="new-button-section">
+            <button class="new-task-button">New Task</button>
+        </section>
+
 
     </main>
 </body>

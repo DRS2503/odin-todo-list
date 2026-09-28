@@ -54,12 +54,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :root{
-    --primary-color: hsl(199, 88%, 44);
+    --primary-color: hsl(199, 88%, 44%);
     --accent-color: hsl(19, 88%, 44%);
 
-    --nuetral-color-100: hsl(0, 0%, 100);
-    --nuetral-color-400: hsl(240, 3%, 77);
-    --nuetral-color-900: hsl(216, 28%, 7);
+    --nuetral-color-100: hsl(0, 0%, 100%);
+    --nuetral-color-200: hsl(0, 0%, 98%);
+    --nuetral-color-400: hsl(240, 3%, 77%);
+    --nuetral-color-900: hsl(216, 28%, 7%);
 
     --font-size-200: 0.75rem;    /* 12px */
     --font-size-300: 0.875rem;   /* 14px */
@@ -90,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+    --bg-collapsible: var(--nuetral-color-200);
     --bg-nav: var(--primary-color);
     --bg-main: var(--nuetral-color-400);
     --bg-card: var(--nuetral-color-100);
@@ -101,10 +103,10 @@ h1, h2, h3, h4, h5, h6 {
     --button-background: var(--primary-color);
     --button-inverse-background: var(--accent-color);
     
-    --tc-primary: var(--primary-color);
-    --tc-accent: var(--accent-color);
-    --tc-black: var(--nuetral-color-900);
-    --tc-white: var(var(--nuetral-color-100));
+    --fc-primary: var(--primary-color);
+    --fc-accent: var(--accent-color);
+    --fc-black: var(--nuetral-color-900);
+    --fc-white: var(--nuetral-color-100);
     
     --fw-header1: var(--font-weight-700);
     --fw-header2: var(--font-size-600);
@@ -113,20 +115,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* General Utilities */
-.tc-primary{
-    color: var(--tc-primary);
+.fc-primary{
+    color: var(--fc-primary);
 }
 
-.tc-accent{
-    color: var(--tc-accent);
+.fc-accent{
+    color: var(--fc-accent);
 }
 
-.tc-black{
-    color: var(--tc-black);
+.fc-black{
+    color: var(--fc-black);
 }
 
-.tc-white{
-    color: var(--tc-white);
+.fc-white{
+    color: var(--fc-white);
 }
 
 .bg-primary{
@@ -173,6 +175,85 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--button-inverse-background);
 }
 
+.padding-small{
+    padding: var(--space-300);
+}
+
+.padding-normal{
+    padding: var(--space-400);
+}
+
+.padding-medium{
+    padding: var(--space-500);
+}
+
+.padding-large{
+    padding: var(--spcae-600);
+}
+
+.block-padding-small{
+    padding: var(--space-300);
+}
+
+.block-padding-normal{
+    padding-top: var(--space-400);
+    padding-bottom: var(--space-400);
+
+}
+
+.block-padding-medium{
+    padding: var(--space-500);
+}
+
+.block-padding-large{
+    padding: var(--spcae-600);
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+}
+
+.flex-row-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-row-spacebetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.align-items-cneter{
+    align-items: center;
+}
+
+.gap-small{
+    gap: var(--space-300);
+}
+
+.gap-normal{
+    gap: var(--space-400);
+}
+
+.gap-large{
+    gap: var(--spcae-600);
+}
+
+.border-radius{
+    border-radius: 1rem;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -181,15 +262,82 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body{
-    background-color: var(--primary-color);
     height: 100vh;
     display: grid;
     grid-template-columns: minmax(150px, 200px) 1fr
+}
+
+nav{
+    line-height: 0;
+    margin-bottom: .5rem;
+}
+
+header{
+    margin-bottom: 1rem;
 }
 
 button{
     border: none;
     border-radius: 1rem;
     background-color: var(--button-background);
+    color: var(--fc-white);
+    padding: .25rem .75rem;
+    font-weight: var(--font-weight-600);
 }
 
+button:hover{
+    color: var(--fc-white);
+    background-color: hsl(199, 88%, 60%);
+}
+
+.inverted-button{
+    background-color: var(--accent-color);
+    color: var(--fc-white);
+}
+
+.inverted-button:hover{
+    color: var(--fc-white);
+    background-color: hsl(19, 88%, 60%);;
+}
+
+.nav-button{
+    padding: 1rem;
+    text-align: left;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    justify-items: left;
+    align-items: center;
+    background-color: var(--bg-card);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.card-data-container{
+    width: 100%;
+}
+
+.dropdown{
+    text-align: right;
+}
+
+.new-button-section{
+    margin-top: 1rem;
+}
+
+.new-task-button{
+    width: 100%;
+}
+
+.new-task-button:hover{
+    color: var(--fc-white);
+    background-color: hsl(199, 88%, 60%);
+}
+
+.collapsible{
+    background-color: var(--bg-collapsible);
+    padding: 1rem;
+
+}
