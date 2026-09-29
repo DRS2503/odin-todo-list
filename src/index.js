@@ -42,3 +42,18 @@ console.log('Project:', getCurrentProjectObject());
 //const task3 = Task('task3','target3', 'high', '/////vm/xvm,bmvcx.,nmnv');
 
 
+const cardList = document.querySelectorAll('.card-button');
+for(const card of cardList){
+    card.addEventListener('click', () => {
+        const content = card.nextElementSibling;
+        if(content.style.display === 'block'){
+            content.style.setProperty('display', 'none');
+            card.style.setProperty('border-radius', '1rem 1rem 1rem 1rem');
+        }
+        else{
+            content.style.setProperty('display', 'block');
+            card.style.setProperty('border-radius', '1rem 1rem 0px 0px');
+        }
+    });
+}
+

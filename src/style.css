@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     --accent-color: hsl(19, 88%, 44%);
 
     --nuetral-color-100: hsl(0, 0%, 100%);
-    --nuetral-color-200: hsl(0, 0%, 98%);
+    --nuetral-color-200: hsl(0, 0%, 95%);
     --nuetral-color-400: hsl(240, 3%, 77%);
     --nuetral-color-900: hsl(216, 28%, 7%);
 
@@ -305,14 +305,23 @@ button:hover{
     text-align: left;
 }
 
-.card{
+.card-button{
+    width: 100%;
     display: grid;
+    font-weight: var(--fw-paragraph);
     grid-template-columns: 2fr 2fr 2fr 1fr;
+    border: none;
     justify-items: left;
     align-items: center;
     background-color: var(--bg-card);
+    color: var(--primary-color);
     padding: 1rem;
     border-radius: 1rem;
+}
+
+.card-button:hover{
+    color: var(--primary-color);
+    background-color: var(--nuetral-color-200);
 }
 
 .card-data-container{
@@ -336,8 +345,13 @@ button:hover{
     background-color: hsl(199, 88%, 60%);
 }
 
+.dropdown-button-div{
+    margin-top: 1rem;
+}
+
 .collapsible{
+    display: none;
     background-color: var(--bg-collapsible);
     padding: 1rem;
-
+    border-radius: 0 0 1rem 1rem;
 }
