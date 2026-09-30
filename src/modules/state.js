@@ -7,6 +7,7 @@ projectList.push(defaultProject);
 let currentProjectIndex = 0;
 let currentProjectObject = projectList[0]; 
 
+
 export const addProject = (title) => {
     const newProject = Project(title);
     projectList.push(newProject);
@@ -47,5 +48,3 @@ export const removeCurrentProject = () => {
     projectList.splice(currentProjectIndex, 1);
     setCurrentProject(0);
 }
-
-

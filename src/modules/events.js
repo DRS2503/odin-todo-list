@@ -1,7 +1,19 @@
 
-export function navButtonClickListener() {
-    //onclick render main with project data
+import { getCurrentProjectObject, getProjectList, setCurrentProject, getTaskList, removeCurrentProject } from "./state.js";
+import { renderHeader, renderTasks, renderProjects} from "./DOMController.js";
 
+export function navButtonListeners() {
+    const navButtons = document.querySelectorAll('.nav-button');
+    for (const button of navButtons) {
+        button.addEventListener('click', () => {
+            setCurrentProject(button.id);
+            renderHeader(getCurrentProjectObject().title);
+            renderTasks(getTaskList());
+            //Add event listeners
+            dotsClickListener();
+            cardClickListener();
+        })
+    }
 }
 
 export function cardClickListener() {
@@ -9,7 +21,9 @@ export function cardClickListener() {
     for (const card of cardList) {
         card.addEventListener('click', () => {
             const content = card.nextElementSibling;
-            if (content.style.display === 'block') {
+            const styles = window.getComputedStyle(content);
+            const display = styles.display;
+            if (display === 'block') {
                 content.style.setProperty('display', 'none');
                 card.style.setProperty('border-radius', '1rem 1rem 1rem 1rem');
             }
@@ -35,6 +49,25 @@ export function dotsClickListener() {
             }
         });
     }
+}
+
+export function removeProjectListener() {
+    const removeProject = document.querySelector('.remove-project-button');
+    removeProject.addEventListener('click', () => {
+        if(getProjectList().length > 1){
+            removeCurrentProject();
+            setCurrentProject(0);
+            renderProjects()
+            renderHeader();
+            renderTasks();
+            navButtonListeners();
+            dotsClickListener();
+            cardClickListener();
+        }
+        else{
+            alert('must have 1 project');
+        }
+    })
 }
 
 export function newProjectCLickListener() {

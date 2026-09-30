@@ -305,6 +305,12 @@ button:hover{
     text-align: left;
 }
 
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
 .card-button{
     width: 100%;
     display: grid;
