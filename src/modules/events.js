@@ -70,7 +70,22 @@ export function removeProjectListener() {
     })
 }
 
+
+const newProjectDialog = document.querySelector('.new-project-dialog');
+const newProjectForm = document.querySelector('new-project-form');
+
 export function newProjectCLickListener() {
+    document.querySelector('.new-project-button').addEventListener('click', () => {
+        newProjectDialog.showModal();
+    })
+}
+
+export function projectCloseButton() {
+    newProjectDialog.close();
+    newProjectForm.reset();
+}
+
+export function projectSubmitButton() {
 
 }
 
