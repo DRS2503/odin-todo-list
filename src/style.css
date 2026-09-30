@@ -324,8 +324,10 @@ button:hover{
     background-color: var(--nuetral-color-200);
 }
 
+
 .card-data-container{
     width: 100%;
+    text-align: left;
 }
 
 .dropdown{
@@ -354,4 +356,48 @@ button:hover{
     background-color: var(--bg-collapsible);
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
+}
+
+.label-p{
+    font-weight: var(--font-weight-600);
+}
+
+.card-header{
+    font-size: var(--font-size-600);
+    font-weight: 700;
+}
+
+svg{
+    position: relative;
+    justify-self: right;
+    width: 25px;
+    height:25x;
+    fill: var(--primary-color);
+    margin-right: 1.75rem;
+}
+
+.three-dots{
+    position: absolute;
+    display: none;
+    top: 10;
+    right: 0;
+    width: 90px;
+    height: auto;
+    padding: .75rem;
+    background-color: hsl(0, 0%, 90%);;
+    justify-items: center;
+}
+
+svg:hover{
+    fill: var(--accent-color);
+}
+
+.remove-task{
+    display: block;
+    color: var(--primary-color);
+    background-color: inherit;
+}
+
+.relative{
+    position: relative;
 }

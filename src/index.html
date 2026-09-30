@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <script type="module" src="index.js" ></script>
+    <script type="module" src="index.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <aside class="bg-primary fc-white padding-normal">
         <h1 class="fs-h1 fw-large">Projects</h1>
         <nav class="fc-white">
-            <ul class="flex-col gap-small block-padding-normal">
+            <ul class="unorder-list | flex-col gap-small block-padding-normal">
                 <button class='nav-button'>Project1</button>
                 <button class='nav-button'>Project2</button>
                 <button class='nav-button'>Project3</button>
@@ -24,49 +25,56 @@
         <button class="inverted-button">New Project</button>
     </aside>
 
-
-
     <main class="bg-grey fc-primary padding-large">
         <header class="flex-row-spacebetween">
-            <h1 class="fw-large fs-h1">Project Placeholder</h1>
+            <h1 class="project-title | fw-large fs-h1">Project Placeholder</h1>
             <button class="inverted-button">Remove</button>
         </header>
 
-
         <section>
             <div id="card-container | bg-accent">
-                <div class="entire-card">
 
-                    <button class="card-button">
-                        <h2 class="fs-h2">Title</h2>
-                        <div class="card-data-container">
-                            <p class="label-p">Target</p>
-                            <p class="data-p">Data</p>
-                        </div>
-                        <div class="card-data-container">
-                            <p class="label-p">Priority</p>
-                            <p class="data-p">Data</p>
-                        </div>
-                        <div class="card-data-container | ">
-                            <p class="dropdown">Dropdown</p>
-                        </div>
-                    </button>
-                    <div class="collapsible">
-                        <div>
-                            <p class="label-p">Description</p>
-                            <p class="data-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type </p>
+                <div role="button" class="card-button">
+                    <h2 class="card-header">Title</h2>
+                    <div class="card-data-container">
+                        <p class="label-p">Target</p>
+                        <p class="data-p">Data</p>
+                    </div>
+                    <div class="card-data-container">
+                        <p class="label-p">Priority</p>
+                        <p class="data-p">Data</p>
+                    </div>
+                    <div class="card-data-container relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <title>dots-horizontal</title>
+                            <path
+                                d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
+                        </svg>
+                        <div class="three-dots">
+                            <button class="remove-task">Remove</button>
                         </div>
                     </div>
                 </div>
+                <div class="collapsible">
+                    <div>
+                        <p class="label-p">Description</p>
+                        <p class="data-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers
+                            at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took
+                            a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
-
 
         <section class="new-button-section">
             <button class="new-task-button">New Task</button>
         </section>
 
-
     </main>
+
 </body>
+
 </html>
