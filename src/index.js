@@ -1,5 +1,5 @@
 import { addProject, getProjectList, getTaskList, getCurrentProjectIndex, getCurrentProjectObject, addTask, setCurrentProject, removeCurrentProject } from './modules/state.js';
-import { NewTaskButton, cardClickListener, dotsClickListener, navButtonListeners, removeProjectListener, newProjectCLickListener } from './modules/events.js';
+import { removeTaskListener, NewTaskButton, cardClickListener, dotsClickListener, navButtonListeners, removeProjectListener, newProjectCLickListener } from './modules/events.js';
 import { renderProjects, renderTasks, renderHeader } from './modules/DOMController.js'
 
 addProject('work');
@@ -24,6 +24,7 @@ cardClickListener();
 removeProjectListener();
 newProjectCLickListener();
 NewTaskButton();
+removeTaskListener();
 
 
 

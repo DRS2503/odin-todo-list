@@ -48,3 +48,7 @@ export const removeCurrentProject = () => {
     projectList.splice(currentProjectIndex, 1);
     setCurrentProject(0);
 }
+
+export const removeTasks = (index) => {
+    currentProjectObject.removeTask(index);
+}

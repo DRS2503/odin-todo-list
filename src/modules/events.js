@@ -1,5 +1,5 @@
 
-import { addProject, addTask, getCurrentProjectObject, getProjectList, setCurrentProject, getTaskList, removeCurrentProject } from "./state.js";
+import { removeTasks, addProject, addTask, getCurrentProjectObject, getProjectList, setCurrentProject, getTaskList, removeCurrentProject } from "./state.js";
 import { renderHeader, renderTasks, renderProjects} from "./DOMController.js";
 
 export function navButtonListeners() {
@@ -12,6 +12,7 @@ export function navButtonListeners() {
             //Add event listeners
             dotsClickListener();
             cardClickListener();
+            removeTaskListener();
         })
     }
 }
@@ -51,6 +52,18 @@ export function dotsClickListener() {
     }
 }
 
+export function removeTaskListener() {
+    const list = document.querySelectorAll('.remove-task');
+    for(const item of list){
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            removeTasks(item.id);
+            renderTasks();
+        })
+    }
+}
+
+
 export function removeProjectListener() {
     const removeProject = document.querySelector('.remove-project-button');
     removeProject.addEventListener('click', () => {
@@ -70,8 +83,6 @@ export function removeProjectListener() {
     })
 }
 
-
-
 export function newProjectCLickListener() {
     const newProjectDialog = document.querySelector('.new-project-dialog');
     const newProjectForm = document.querySelector('.new-project-form');
@@ -89,9 +100,10 @@ export function newProjectCLickListener() {
         addProject(formData.get('title'));
         renderProjects();
         navButtonListeners();
+        removeTaskListener();
+        newProjectForm.reset();
     })
 }
-
 
 export function NewTaskButton() {
     const taskDialog = document.querySelector('.new-task-dialog');
@@ -112,6 +124,8 @@ export function NewTaskButton() {
         renderTasks();
         cardClickListener();
         dotsClickListener();
+        removeTaskListener();
+        taskForm.reset();
     })
 }
 

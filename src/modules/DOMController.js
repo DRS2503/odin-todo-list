@@ -16,6 +16,7 @@ export function renderTasks(){
     const cardContainer = document.querySelector('.card-container') 
     cardContainer.textContent = '';
     
+    let i = 0;
     for(const task of getTaskList()){
         const divElement = document.createElement('div');
         cardContainer.append(divElement);
@@ -71,6 +72,7 @@ export function renderTasks(){
 
         const button = document.createElement('button')
         button.textContent = 'remove';
+        button.id = i;
         button.classList.add('remove-task');
         dropDown.append(button);
 
@@ -87,6 +89,7 @@ export function renderTasks(){
         descriptionData.textContent = task.description;
         descriptionData.classList.add('data-p');
         collapsible.append(descriptionData);
+        i += 1;
     }
 }
 
