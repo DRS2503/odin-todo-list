@@ -94,3 +94,4 @@ export function renderHeader(){
     const projectTitle = document.querySelector('.project-title');
     projectTitle.textContent = getCurrentProjectObject().title;
 }
+

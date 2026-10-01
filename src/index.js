@@ -1,5 +1,5 @@
 import { addProject, getProjectList, getTaskList, getCurrentProjectIndex, getCurrentProjectObject, addTask, setCurrentProject, removeCurrentProject } from './modules/state.js';
-import { cardClickListener, dotsClickListener, navButtonListeners, removeProjectListener } from './modules/events.js';
+import { NewTaskButton, cardClickListener, dotsClickListener, navButtonListeners, removeProjectListener, newProjectCLickListener } from './modules/events.js';
 import { renderProjects, renderTasks, renderHeader } from './modules/DOMController.js'
 
 addProject('work');
@@ -17,21 +17,14 @@ addTask('task3', 'target3', 'high', '/////vm/xvm,bmvcx.,nmnv')
 renderProjects();
 renderHeader();
 renderTasks();
+
 navButtonListeners();
 dotsClickListener();
 cardClickListener();
-
-
 removeProjectListener();
+newProjectCLickListener();
+NewTaskButton();
 
-newProjectListener();
-
-export function newProjectListener(){
-    document.querySelector('.new-project-button').addEventListener('click', () => {
-        console.log('click');
-    })
-    
-}
 
 
 

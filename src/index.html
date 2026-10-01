@@ -71,12 +71,33 @@
         </section>
         
         <dialog class="new-project-dialog">
-            <form class="new-project-form">
+            <form class="new-project-form" method="dialog">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title">
                 <div class="button-container">
-                    <button class="project-close-button">close</button>
+                    <button class="project-close-button" type="submit">close</button>
                     <button class="project-submit-button" type="submit">Submit</button>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog class="new-task-dialog">
+            <form class="new-task-form" method="dialog">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+
+                <label for="target">Target</label>
+                <input type="date" id="target" name="target">
+
+                <label for="priority">Priority</label>
+                <input type="text" id="priority" name="priority">
+
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description">
+
+                <div class="button-container">
+                    <button class="task-close-button" type="submit">close</button>
+                    <button class="task-submit-button" type="submit">Submit</button>
                 </div>
             </form>
         </dialog>

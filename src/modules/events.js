@@ -1,5 +1,5 @@
 
-import { getCurrentProjectObject, getProjectList, setCurrentProject, getTaskList, removeCurrentProject } from "./state.js";
+import { addProject, addTask, getCurrentProjectObject, getProjectList, setCurrentProject, getTaskList, removeCurrentProject } from "./state.js";
 import { renderHeader, renderTasks, renderProjects} from "./DOMController.js";
 
 export function navButtonListeners() {
@@ -71,24 +71,47 @@ export function removeProjectListener() {
 }
 
 
-const newProjectDialog = document.querySelector('.new-project-dialog');
-const newProjectForm = document.querySelector('new-project-form');
 
 export function newProjectCLickListener() {
+    const newProjectDialog = document.querySelector('.new-project-dialog');
+    const newProjectForm = document.querySelector('.new-project-form');
     document.querySelector('.new-project-button').addEventListener('click', () => {
         newProjectDialog.showModal();
     })
+    
+    document.querySelector('.project-close-button').addEventListener('click', () => {
+        newProjectForm.reset();
+        newProjectDialog.close();
+    })
+
+    document.querySelector('.project-submit-button').addEventListener('click', () => {
+        const formData = new FormData(newProjectForm);
+        addProject(formData.get('title'));
+        renderProjects();
+        navButtonListeners();
+    })
 }
 
-export function projectCloseButton() {
-    newProjectDialog.close();
-    newProjectForm.reset();
+
+export function NewTaskButton() {
+    const taskDialog = document.querySelector('.new-task-dialog');
+    const taskForm = document.querySelector('.new-task-form');
+
+    document.querySelector('.new-task-button').addEventListener('click', () => {
+        taskDialog.show();
+    })
+
+    document.querySelector('.task-close-button').addEventListener('click', () => {
+        taskForm.reset();
+        taskDialog.close();
+    })
+
+    document.querySelector('.task-submit-button').addEventListener('click', () => {
+        const formData = new FormData(taskForm);
+        addTask(formData.get('title'), formData.get('target'), formData.get('priority'), formData.get('description'));
+        renderTasks();
+        cardClickListener();
+        dotsClickListener();
+    })
 }
 
-export function projectSubmitButton() {
-
-}
-
-export function newTaskClickListener() {
-
-}
