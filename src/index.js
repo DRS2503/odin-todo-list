@@ -14,6 +14,3 @@ newProjectCLickListener();
 NewTaskButton();
 removeTaskListener();
 
-
-
-
